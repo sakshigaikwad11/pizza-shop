@@ -8,3 +8,18 @@
   to = "/.netlify/functions/api/:splat"
   status = 200
   
+[functions]
+  # Optional transports that @nestjs/microservices and @nestjs/websockets load
+  # lazily at runtime. They aren't installed or used, so keep esbuild from
+  # trying to bundle them.
+  external_node_modules = [
+    "@nestjs/platform-socket.io",
+    "@grpc/grpc-js",
+    "@grpc/proto-loader",
+    "kafkajs",
+    "ioredis",
+    "amqplib",
+    "amqp-connection-manager",
+    "mqtt",
+    "nats"
+  ]
